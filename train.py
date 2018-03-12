@@ -61,6 +61,7 @@ def train(rank, args, shared_model, optimizer):
         for step in range(args.num_steps):
 
             player.action_train()
+            player.env.render()
 
             if player.done:
                 break

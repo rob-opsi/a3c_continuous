@@ -57,6 +57,7 @@ def test(args, shared_model):
                 player.model.load_state_dict(shared_model.state_dict())
 
         player.action_test()
+        player.env.render()
         reward_sum += player.reward
 
         if player.done:
