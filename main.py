@@ -134,7 +134,7 @@ if __name__ == '__main__':
         args.gpu_ids = [-1]
     else:
         torch.cuda.manual_seed(args.seed)
-        mp.set_start_method('spawn')
+        #mp.set_start_method('spawn')	# commented out by dusty-nv for python 2.7 compatability
     env = create_env(args.env, args)
     if args.model == 'MLP':
         shared_model = A3C_MLP(
